@@ -1,6 +1,6 @@
-[Back to README](../README.md)
 
-## Overview
+# Overview
+
 This project serves as an evaluation for senior developer candidates. It is designed to assess various skills and competencies required for a senior developer role, including but not limited to:
 
 1. Proficiency in C# and .NET 8.0 development
@@ -12,7 +12,7 @@ This project serves as an evaluation for senior developer candidates. It is desi
 7. Experience with mocking frameworks like NSubstitute
 8. Familiarity with object mapping libraries such as AutoMapper
 9. API design and RESTful service implementation
-10. Version control with Git 
+10. Version control with Git
 11. Understanding of both relational and non relational database systems
 12. Data generation and management for testing purposes (using Faker)
 13. Code organization and project structure
@@ -26,11 +26,8 @@ This project serves as an evaluation for senior developer candidates. It is desi
 21. Attention to detail in implementing business logic
 22. Ability to work with and integrate multiple technologies and frameworks
 
-
 This comprehensive evaluation aims to assess both the technical proficiency and the broader software engineering skills necessary for a senior developer role.
 
-<br/>
-<div style="display: flex; justify-content: space-between;">
-  <a href="../README.md">Previous: Read Me</a>
-  <a href="./tech-stack.md">Next: Tech Stack</a>
-</div>
+Next: [Tech Stack](./tech-stack.md)
+
+Back: [README](../README.md)

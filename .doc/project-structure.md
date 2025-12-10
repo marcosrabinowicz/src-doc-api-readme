@@ -1,12 +1,14 @@
-[Back to README](../README.md)
+# 🗂️ Estrutura do Projeto
 
-## Project Structure
+## The project should be structured as follows
 
-The project should be structured as follows:
-
-```
+``` text
 root
 ├── src/
 ├── tests/
+├── .doc/
 └── README.md
+
 ```
+
+Back: [README](../README.md)

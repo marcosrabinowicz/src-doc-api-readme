@@ -1,26 +1,29 @@
-[Back to README](../README.md)
+# Authentication
 
+## POST /auth/login
 
-### Authentication
-
-#### POST /auth/login
 - Description: Authenticate a user
 - Request Body:
-  ```json
+
+  ``` json
   {
     "username": "string",
     "password": "string"
   }
+
   ```
-- Response: 
-  ```json
+
+- Response:
+
+  ``` json
   {
     "token": "string"
   }
+
   ```
 
-<br/>
-<div style="display: flex; justify-content: space-between;">
-  <a href="./users-api.md">Previous: Users API</a>
-  <a href="./project-structure.md">Next: Project Structure</a>
-</div>
+Previous: [Users API](./users-api.md)
+
+Next: [Project Structure](./project-structure.md)
+
+Back: [README](../README.md)

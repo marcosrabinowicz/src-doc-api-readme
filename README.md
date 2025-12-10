@@ -1,86 +1,131 @@
-# Developer Evaluation Project
+# Orders API Template – by Neshama Tech
 
-`READ CAREFULLY`
+## Tecnologia na Veia • Software com Alma
 
-## Instructions
-**The test below will have up to 7 calendar days to be delivered from the date of receipt of this manual.**
+### 🧭 Sobre este Template
 
-- The code must be versioned in a public Github repository and a link must be sent for evaluation once completed
-- Upload this template to your repository and start working from it
-- Read the instructions carefully and make sure all requirements are being addressed
-- The repository must provide instructions on how to configure, execute and test the project
-- Documentation and overall organization will also be taken into consideration
+__Este repositório é um modelo oficial da Neshama Tech para quem deseja aprender, criar ou estruturar APIs profissionais utilizando boas práticas modernas de desenvolvimento.__
 
-## Use Case
-**You are a developer on the DeveloperStore team. Now we need to implement the API prototypes.**
+Ele serve como:
 
-As we work with `DDD`, to reference entities from other domains, we use the `External Identities` pattern with denormalization of entity descriptions.
+* 📘 Exemplo de README altamente profissional
+* 🏗️ Modelo de arquitetura para APIs REST
+* 📂 Template de documentação (pasta `.doc`)
 
-Therefore, you will write an API (complete CRUD) that handles sales records. The API needs to be able to inform:
+O domínio escolhido é __Orders__ — um cenário clássico de e-commerce que envolve criação, atualização, listagem e detalhamento de pedidos.
 
-* Sale number
-* Date when the sale was made
-* Customer
-* Total sale amount
-* Branch where the sale was made
-* Products
-* Quantities
-* Unit prices
-* Discounts
-* Total amount for each item
-* Cancelled/Not Cancelled
+_   _                 _
 
-It's not mandatory, but it would be a differential to build code for publishing events of:
-* SaleCreated
-* SaleModified
-* SaleCancelled
-* ItemCancelled
+### ✨ Quem Somos — Neshama Tech
 
-If you write the code, **it's not required** to actually publish to any Message Broker. You can log a message in the application log or however you find most convenient.
+__A Neshama Tech é um estúdio independente de tecnologia criado para unir:__
 
-### Business Rules
+* software moderno
+* criatividade
+* propósito
+* vida real
+* alma
 
-* Purchases above 4 identical items have a 10% discount
-* Purchases between 10 and 20 identical items have a 20% discount
-* It's not possible to sell above 20 identical items
-* Purchases below 4 items cannot have a discount
+Construímos soluções com simplicidade, elegância e profundidade técnica — sempre com a filosofia de que tecnologia boa é a que melhora a vida das pessoas.
 
-These business rules define quantity-based discounting tiers and limitations:
+_   _                 _
 
-1. Discount Tiers:
-   - 4+ items: 10% discount
-   - 10-20 items: 20% discount
+#### 🌐 Site oficial: [https://neshamatech.com.br](https://neshamatech.com.br)
 
-2. Restrictions:
-   - Maximum limit: 20 items per product
-   - No discounts allowed for quantities below 4 items
+#### 📸 Instagram: [https://www.instagram.com/marcosrabinowicz](https://www.instagram.com/marcosrabinowicz)
 
-## Overview
-This section provides a high-level overview of the project and the various skills and competencies it aims to assess for developer candidates. 
+#### 💼 LinkedIn: [https://www.linkedin.com/in/marcosrabinowicz](https://www.linkedin.com/in/marcosrabinowicz)
 
-See [Overview](/.doc/overview.md)
+_   _                 _
 
-## Tech Stack
-This section lists the key technologies used in the project, including the backend, testing, frontend, and database components. 
+### 📦 Use este Template
 
-See [Tech Stack](/.doc/tech-stack.md)
+Você pode:
 
-## Frameworks
-This section outlines the frameworks and libraries that are leveraged in the project to enhance development productivity and maintainability. 
+* Fazer fork
+* Baixar e usar como base para qualquer API
+* Adaptar para testes técnicos
+* Incorporar em projetos de estudo
+* Usar a estrutura como referência para documentar suas próprias APIs
 
-See [Frameworks](/.doc/frameworks.md)
+Se este template te ajudar, considera dar um ⭐ no repositório!
 
-<!-- 
-## API Structure
-This section includes links to the detailed documentation for the different API resources:
-- [API General](./docs/general-api.md)
-- [Products API](/.doc/products-api.md)
-- [Carts API](/.doc/carts-api.md)
-- [Users API](/.doc/users-api.md)
-- [Auth API](/.doc/auth-api.md)
--->
+_   _                 _
 
-## Project Structure
-This section describes the overall structure and organization of the project files and directories. 
+### 🧩 Caso de Uso: Orders de E-commerce
 
-See [Project Structure](/.doc/project-structure.md)
+Um sistema de e-commerce precisa registrar Pedidos (Orders) com:
+
+* Cliente
+* Data do pedido
+* Itens
+* Quantidade
+* Preço unitário
+* Descontos aplicados
+* Valor total
+* Status (Criado, Processado, Enviado, Cancelado)
+
+Este template demonstra como documentar e modelar essa API seguindo boas práticas.
+
+_   _                 _
+
+### 🔧 Regras Comuns de Negócio (exemplo)
+
+Você pode adaptar para seus projetos, mas aqui vai um conjunto sugerido:
+
+* Pedidos só podem ser cancelados antes do envio
+* Quantidades negativas não são permitidas
+* Descontos podem ser configurados por produto
+* Uma Order deve recalcular automaticamente seu total ao modificar itens
+* Eventos opcionais podem ser disparados: `OrderCreated` `OrderUpdated` `OrderCancelled`
+
+_   _                 _
+
+### 📚 Documentação Completa (pasta `.doc`)
+
+Toda a documentação estruturada fica dentro da pasta:
+
+``` bash
+/.doc
+
+```
+
+Acesse:
+
+* 📘 Overview → [Orders API Overview](/.doc/overview.md)
+* ⚙️ Tech Stack → [Technology Stack](/.doc/tech-stack.md)
+* 🧱 Frameworks → [Frameworks Guide](/.doc/frameworks.md)
+* 🔌 API Geral → [General API Documentation](/.doc/general-api.md)
+* 🛒 Orders API → (substituir os arquivos de carts/products/users conforme seu domínio)
+* 🏗️ Project Structure → [Project Structure Guide](/.doc/project-structure.md)
+
+_   _                 _
+
+### 🤝 Contribuição
+
+Pull Requests são bem-vindos!
+Sugestões de melhorias para o template também.
+
+_   _                 _
+
+### 📩 Contato
+
+Se quiser trocar ideia sobre tecnologia, arquitetura, carreira ou projetos:
+
+→ Me chama no LinkedIn: [https://www.linkedin.com/in/marcosrabinowicz](https://www.linkedin.com/in/marcosrabinowicz)
+
+_   _                 _
+
+### 📜 Licença
+
+``` text
+Este template está disponível sob a licença MIT – use livremente em projetos pessoais ou profissionais.
+
+```
+
+⭐ Se este template te ajudou…
+
+Deixa aquela estrela no repositório e compartilha com outros devs.
+
+Tecnologia na veia. Simplicidade na alma.
+Neshama Tech.

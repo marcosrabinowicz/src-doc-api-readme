@@ -1,15 +1,16 @@
-[Back to README](../README.md)
 
-### Carts
+# Carts
 
-#### GET /carts
+## GET /carts
+
 - Description: Retrieve a list of all carts
 - Query Parameters:
   - `_page` (optional): Page number for pagination (default: 1)
   - `_size` (optional): Number of items per page (default: 10)
   - `_order` (optional): Ordering of results (e.g., "id desc, userId asc")
-- Response: 
-  ```json
+- Response:
+
+  ``` json
   {
     "data": [
       {
@@ -28,12 +29,15 @@
     "currentPage": "integer",
     "totalPages": "integer"
   }
+
   ```
 
-#### POST /carts
+## POST /carts
+
 - Description: Add a new cart
 - Request Body:
-  ```json
+
+  ``` json
   {
     "userId": "integer",
     "date": "string (date)",
@@ -44,9 +48,12 @@
       }
     ]
   }
+
   ```
-- Response: 
-  ```json
+
+- Response:
+
+  ``` json
   {
     "id": "integer",
     "userId": "integer",
@@ -58,14 +65,17 @@
       }
     ]
   }
+
   ```
 
-#### GET /carts/{id}
+## GET /carts/{id}
+
 - Description: Retrieve a specific cart by ID
 - Path Parameters:
   - `id`: Cart ID
-- Response: 
-  ```json
+- Response:
+
+  ``` json
   {
     "id": "integer",
     "userId": "integer",
@@ -77,14 +87,17 @@
       }
     ]
   }
+
   ```
 
-#### PUT /carts/{id}
+## PUT /carts/{id}
+
 - Description: Update a specific cart
 - Path Parameters:
   - `id`: Cart ID
 - Request Body:
-  ```json
+
+  ``` json
   {
     "userId": "integer",
     "date": "string (date)",
@@ -95,9 +108,12 @@
       }
     ]
   }
+
   ```
-- Response: 
-  ```json
+
+- Response:
+
+  ``` json
   {
     "id": "integer",
     "userId": "integer",
@@ -109,22 +125,25 @@
       }
     ]
   }
+
   ```
 
-#### DELETE /carts/{id}
+## DELETE /carts/{id}
+
 - Description: Delete a specific cart
 - Path Parameters:
   - `id`: Cart ID
-- Response: 
-  ```json
+- Response:
+
+  ``` json
   {
     "message": "string"
   }
+
   ```
 
+Previous: [Products API](./products-api.md)
 
-<br>
-<div style="display: flex; justify-content: space-between;">
-  <a href="./products-api.md">Previous: Products API</a>
-  <a href="./users-api.md">Next: Users API</a>
-</div>
+Next: [Users API](./users-api.md)
+
+Back: [README](../README.md)

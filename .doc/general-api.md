@@ -1,8 +1,7 @@
-[Back to README](../README.md)
 
-## General API Definitions
+# General API Definitions
 
-### Pagination
+## Pagination
 
 Pagination is supported for list endpoints using the following query parameters:
 
@@ -10,21 +9,23 @@ Pagination is supported for list endpoints using the following query parameters:
 - `_size`: Number of items per page (default: 10)
 
 Example:
-```
+
+``` text
 GET /products?_page=2&_size=20
+
 ```
 
-### Ordering
+## Ordering
 
 When requesting a collection of a resource, you can also specify the order of the elements in the collection using the query parameter `_order`. Simply indicate the desired order: ascending (`asc`) or descending (`desc`). If not specified, the default order will be ascending.
 
-**Note**
+____Note____
 
 In the GET request, you must use the field names in the same format as the JSON response.
 
 For example, consider the following Product resource:
 
-```json
+``` json
 {
   "id": 1,
   "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -37,21 +38,24 @@ For example, consider the following Product resource:
     "count": 120
   }
 }
+
 ```
 
 In this case, to retrieve a list of products ordered by price in descending order and then by title in ascending order, the request would look like this:
 
-```
+``` test
 GET /products?_order="price desc, title asc"
-```
-
-or 
 
 ```
+
+or
+
+``` test
 GET /products?_order="price desc, title"
+
 ```
 
-### Filtering
+## Filtering
 
 Filters can be applied to list endpoints using the following query parameters:
 
@@ -59,41 +63,46 @@ Filters can be applied to list endpoints using the following query parameters:
 
 Example:
 
-```
+``` test
 GET /products?category=men's clothing&price=109.95
+
 ```
 
-**String Fields**
+____String Fields____
 
 To filter partial matches for string fields, use an asterisk (`*`) before or after the value.
 
 Example:
 
-```
+``` text
 GET /products?title=Fjallraven*
 GET /products?category=*clothing
+
 ```
 
-**Numeric and Date Fields**
+____Numeric and Date Fields____
 
 To filter numeric or date fields by range, use `_min` and `_max` prefixes before the field name.
 
 Example:
 
-```
+``` text
 GET /products?_minPrice=50
 GET /products?_minPrice=50&_maxPrice=200
 GET /carts?_minDate=2023-01-01
+
 ```
 
-Logical Operators
+____Logical Operators____
+
 When combining filters, use `&` (AND) between them.
 
 Example:
 
-```
+``` text
 GET /products?category=men's clothing&_minPrice=50
 GET /products?title=Fjallraven*&category=men's clothing&_minPrice=100
+
 ```
 
 *Note*
@@ -115,6 +124,7 @@ The API uses conventional HTTP response codes to indicate the success or failure
   "error": "string",
   "detail": "string"
 }
+
 ```
 
 - `type`: A machine-readable error type identifier
@@ -124,36 +134,42 @@ The API uses conventional HTTP response codes to indicate the success or failure
 Example error responses:
 
 1. Resource Not Found
-```json
-{
-  "type": "ResourceNotFound",
-  "error": "Product not found",
-  "detail": "The product with ID 12345 does not exist in our database"
-}
-```
 
-2. Authentication Error
-```json
-{
-  "type": "AuthenticationError",
-  "error": "Invalid authentication token",
-  "detail": "The provided authentication token has expired or is invalid"
-}
-```
+  ``` json
+  {
+    "type": "ResourceNotFound",
+    "error": "Product not found",
+    "detail": "The product with ID 12345 does not exist in our database"
+  }
 
-3. Validation Error
-```json
-{
-  "type": "ValidationError",
-  "error": "Invalid input data",
-  "detail": "The 'price' field must be a positive number"
-}
-```
+  ```
+
+1. Authentication Error
+
+  ``` json
+  {
+    "type": "AuthenticationError",
+    "error": "Invalid authentication token",
+    "detail": "The provided authentication token has expired or is invalid"
+  }
+
+  ```
+
+1. Validation Error
+
+  ``` json
+  {
+    "type": "ValidationError",
+    "error": "Invalid input data",
+    "detail": "The 'price' field must be a positive number"
+  }
+
+  ```
 
 For detailed error information, refer to the specific endpoint documentation.
 
-<br>
-<div style="display: flex; justify-content: space-between;">
-  <a href="./frameworks.md">Previous: Frameworks</a>
-  <a href="./products-api.md">Next: Products API</a>
-</div>
+Previous: [Frameworks](./frameworks.md)
+
+Next: [Products API](./products-api.md)
+
+Back: [README](../README.md)
